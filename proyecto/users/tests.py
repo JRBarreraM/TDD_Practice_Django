@@ -43,10 +43,18 @@ class seguridadTests(TestCase):
         except ValidationError:
                 print("Status:  PASSED\n")
 
-    # Clave invalida (menos de 8 caracteres tres letras)
+    # Clave invalida (menos de 8 caracteres)
     def test06(self):
         print("Case 6: Password With Less than 8 Characters")
         try:
             self.assertRaises(seguridad.validate(self,"Aaa1234"))
+        except ValidationError:
+                print("Status:  PASSED\n")
+
+    # Clave invalida (mas de 16 caracteres)
+    def test07(self):
+        print("Case 7: Password With More than 16 Characters")
+        try:
+            self.assertRaises(seguridad.validate(self,"Aaa12345Aaa123456"))
         except ValidationError:
                 print("Status:  PASSED\n")
