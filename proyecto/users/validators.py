@@ -26,5 +26,8 @@ class seguridad():
         if len(password) < 8:
             raise ValidationError('Debe tener al menos 8 caracteres.')
 
+        if len(password) > 16:
+            raise ValidationError('Debe tener a lo sumo 16 caracteres.')
+
     def get_help_text(self):
         return ""
