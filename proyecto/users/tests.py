@@ -26,3 +26,11 @@ class seguridadTests(TestCase):
             self.assertRaises(seguridad.validate(self,"a123456789"))
         except ValidationError:
                 print("Status:  PASSED\n")
+
+    # Clave invalida (solo letras)
+    def test04(self):
+        print("Case 4: Password Without Lowercase")
+        try:
+            self.assertRaises(seguridad.validate(self,"A123456789"))
+        except ValidationError:
+                print("Status:  PASSED\n")
