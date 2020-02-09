@@ -23,5 +23,8 @@ class seguridad():
         if not threeLetters(password):
             raise ValidationError('Debe tener al menos 3 letras.')
 
+        if len(password) < 8:
+            raise ValidationError('Debe tener al menos 8 caracteres.')
+
     def get_help_text(self):
         return ""
