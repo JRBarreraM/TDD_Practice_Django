@@ -11,7 +11,7 @@ def threeLetters(password):
 class seguridad():
 
     def validate(self, password, user=None):
-        return None
-
+        if not password.isalnum():
+            raise ValidationError('Debe tener solo caracteres alfanumericos.')
     def get_help_text(self):
         return ""
