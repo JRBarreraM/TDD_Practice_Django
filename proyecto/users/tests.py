@@ -27,7 +27,7 @@ class seguridadTests(TestCase):
         except ValidationError:
                 print("Status:  PASSED\n")
 
-    # Clave invalida (solo letras)
+    # Clave invalida (sin letra Minuscula)
     def test04(self):
         print("Case 4: Password Without Lowercase")
         try:
