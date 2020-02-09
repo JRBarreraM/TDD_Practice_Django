@@ -20,5 +20,8 @@ class seguridad():
         if not any(char.islower() for char in password):
             raise ValidationError('Debe tener al menos una letra minuscula.')
 
+        if not threeLetters(password):
+            raise ValidationError('Debe tener al menos 3 letras.')
+
     def get_help_text(self):
         return ""
