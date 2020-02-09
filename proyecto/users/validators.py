@@ -13,5 +13,9 @@ class seguridad():
     def validate(self, password, user=None):
         if not password.isalnum():
             raise ValidationError('Debe tener solo caracteres alfanumericos.')
+        
+        if not any(char.isupper() for char in password):
+            raise ValidationError('Debe tener al menos una letra mayuscula.')
+
     def get_help_text(self):
         return ""
