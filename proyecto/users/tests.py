@@ -34,3 +34,11 @@ class seguridadTests(TestCase):
             self.assertRaises(seguridad.validate(self,"A123456789"))
         except ValidationError:
                 print("Status:  PASSED\n")
+
+    # Clave invalida (sin tres letras)
+    def test05(self):
+        print("Case 5: Password With Less than 3 alphabeticCharacters")
+        try:
+            self.assertRaises(seguridad.validate(self,"Aa123456789"))
+        except ValidationError:
+                print("Status:  PASSED\n")
