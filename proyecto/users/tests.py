@@ -10,3 +10,11 @@ class seguridadTests(TestCase):
         print("Case 1: Password OK")
         self.assertEqual(seguridad.validate(self,"11aaBBaa"), None)
         print("Status:  PASSED\n")
+
+    # Clave invalida (tiene caracter alfanumerico)
+    def test02(self):
+        print("Case 2: Password With Special Character")
+        try:
+            self.assertRaises(seguridad.validate(self,"12345$TTuu"))
+        except ValidationError:
+                print("Status:  PASSED\n")
